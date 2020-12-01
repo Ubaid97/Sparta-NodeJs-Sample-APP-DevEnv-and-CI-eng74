@@ -50,7 +50,37 @@ $ pm2 start app.js
 ```
 
 
-:taco:
-:zap:
+## Branching
 
-timeline landing page tracker
+
+**creating a branch**
+
+```bash
+$ git checkout -b <branch>
+```
+
+**changing to existing branch**
+```bash
+$ git checkout <branch>
+```
+
+**Commit to branch as normal**
+```bash
+$ git add .
+$ git commit -m "useful descriptive message"
+```
+
+**once commited, push specific branches to origin**
+
+```bash
+# git <action> <remote> <branch>
+$ git push origin landing-page-title
+> (...)
+> Enumerating objects: 5, done.
+> remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+(...)
+```
+
+
+
+
