@@ -24,10 +24,24 @@ sudo npm install pm2 -g
 
 sudo apt-get install nginx -y
 
+## Setting up nginx
+sudo unlink /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/sites-available/default #started getting the 502 error
+# 502 error means that nginx is point to somewhere where there is nothing
+# that means my app isn't running
+# therefore I ran `pm2 start app.js on the app.js
+
+sudo cp /home/ubuntu/environment/proxy.conf /etc/nginx/sites-available/proxy.conf
+sudo ln -s /etc/nginx/sites-available/proxy.conf /etc/nginx/sites-enabled/proxy.conf
+
+
 # finally, restart the nginx service so the new config takes hold
 sudo service nginx restart
+# sudo systemctl restart nginx
 
 # Missing some automation here to start the servers
 cd /home/ubuntu/app
 
 pm2 start app.js
+
+
